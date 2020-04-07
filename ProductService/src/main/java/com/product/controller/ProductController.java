@@ -53,8 +53,12 @@ public class ProductController {
 	
 	@PostMapping("/createProduct")
 	public ProductEntity createProduct(@RequestBody ProductEntity product) {
-		System.out.println("Product: "+product.getId()+""+product.getPname());
-		return product;
+		
+		ProductEntity productentity=new ProductEntity();
+		productentity.setId(product.getId());
+		productentity.setPname(product.getPname());
+		System.out.println("Product: "+productentity.getId()+""+productentity.getPname());
+		return productentity;
 	}
 	
 	
